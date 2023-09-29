@@ -1,36 +1,39 @@
 
-const {createApp} = Vue;
 
-createApp ({
-  data() {
-    return {
-      tasks: [
-        'Fare la spesa',
-        'Studiare Vue',
-        'Comprare il vino'
-      ],
-      newTask: '',
-      isError: false
-    }
-  },
+const { createApp } = Vue;
 
-  methods: {
-    addTask() {
-      if(this.newTask.length < 5) {
-        this.isError = true
-      }  else {
-        this.tasks.unshift(this.newTask)
-        this.newTask = '';
-        this.isError = false
+  createApp({
+    data() {
+      return {
+        tasks: [
+          {
+            testo: 'Fare la spesa',
+            done: false
+          }
+        ],
+
+        newTask: {
+          testo: '', // ho aggiunto oggetto newTask come un oggetto
+          done: false
+        },
+
+        isError: false,
       }
     },
 
-    removeTask(index) {
-      this.tasks.splice(index, 1)
+    methods: {
+      addTask() {
+        if (this.newTask.testo.length < 5) { // ho usato this.newTask.testo
+          this.isError = true;
+        } else {
+          this.tasks.unshift({ ...this.newTask }); // ho aggiunto un nuovo oggetto al posto della stringa
+          this.newTask.testo = ''; // cancella solo il testo
+          this.isError = false;
+        }
+      },
+
+      removeTask(index) {
+        this.tasks.splice(index, 1)
+      }
     }
-    
-  }
-
-
-
-}).mount('#app');
+  }).mount('#app');
