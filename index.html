@@ -4,6 +4,11 @@
    <!-- link VUE.JS cdn  -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+  <!-- font GOOGLE  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;900&family=Inconsolata&family=Lato:wght@900&display=swap" rel="stylesheet">
+
  <!-- link FONT AWESOME  -->
  <link
  rel="stylesheet"
@@ -36,10 +41,10 @@
 
 
     <div class="new-task">
-      <input type="text" v-model.trim="newTask.testo" placeholder="Nuova task" @keyup.enter="addTask">
+      <input type="text" v-model.trim="newTask.testo" placeholder="Inserisci nuova task" @keyup.enter="addTask">
 
-      <button @click="addTask">Aggiungi</button>
-      <p v-if="isError" class="error">
+      <button class="bottone" @click="addTask">Aggiungi</button>
+      <p v-if="isError" class="error fs-5 text-danger  mt-3 ">
         Il nuovo task deve avere almeno 5 caratteri
       </p>
     </div>
@@ -47,15 +52,16 @@
     <div class="task-container">
       <ul v-if="tasks.length > 0">
         <li @click="task.done = !task.done" v-for="(task, index) in tasks">
-          <span :class="{sbarrato: task.done}">{{task.testo}}</span>
+          <span class="fs-5" :class="{'sbarrato text-danger': task.done}">{{task.testo}}</span>
           <i @click="removeTask(index)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
 
-      <h3 v-else>non ci sono task</h3>
+      <h3 v-else>non ci sono task 😊</h3>
     </div>
 
 
+    
   </div>
 
   <!-- link JAVASCRIPT  -->
