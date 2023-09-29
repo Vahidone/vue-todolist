@@ -26,7 +26,7 @@ createApp ({
     },
 
     removeTask(index) {
-      this.taskd.splice(index, 1)
+      this.tasks.splice(index, 1)
     }
     
   }
