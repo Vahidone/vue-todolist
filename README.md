@@ -5,5 +5,24 @@
 #### pseudocodice: 
 1. Creare layout in html (come abbiamo fatto in classe).
 2. Creare un'applicazione Vue.
-3. Definire i dati iniziali: un array con dentro le cose da fare.
-4. Definire metodi: una funzione per il messaggio di errore riguardo il testo inserito nell'input e un'altra funzione per poter rimuovere uno dei task dalla lista. 
+3. Definire i dati iniziali: un array di oggetti con dentro un testo in stringa e un valore booleano.
+4. Aggiungere un pulsante "Aggiungi" con un gestore click chiamato "addTask"
+5. Creare una funzione "removeTask" per rimuovere un task dall'array "tasks"
+
+
+
+### Bonus 1: se il todo ha meno di 5 caratteri esporre un messaggio di errore 
+
+#### pseudocodice: 
+1. Creare una condizione nella funzione addTask() che tramite un valore booleano (isError) controlli la lunghezza di ogni testo nuovo.
+
+### Bonus 2: cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+#### pseudocodice: 
+1. Usare il valore booleano "done" nel @click sull'elemento "li": true è uguale al false.
+
+### Bonus 3: 
+
+#### pseudocodice: eliminare il todo solo se è stato svolto, altrimenti esporre un messaggio di errore
+
+
+
