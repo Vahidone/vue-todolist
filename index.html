@@ -31,23 +31,23 @@
 
 
     <div class="new-task">
-      <input type="text" placeholder="Nuova task">
+      <input type="text" v-model.trim="newTask" placeholder="Nuova task" @keyup.enter="addTask">
 
-      <button>Aggiungi</button>
-      <p>
+      <button @click="addTask">Aggiungi</button>
+      <p v-if="isError" class="error">
         Il nuovo task deve avere almeno 5 caratteri
       </p>
     </div>
 
     <div class="task-container">
-      <ul>
-        <li>
+      <ul v-if="tasks.length > 0">
+        <li v-for="(task, index) in tasksUpper">
           <span>{{ task }}</span>
-          <i class="fa-solid fa-trash-can"></i>
+          <i @click="removeTask(index)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
 
-      <h3>non ci sono task</h3>
+      <h3 v-else>non ci sono task</h3>
     </div>
 
 
