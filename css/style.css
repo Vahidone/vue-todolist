@@ -68,6 +68,10 @@ margin: auto;
   cursor: pointer;
 
 }
+.task-container li i:hover {
+  color: red;
+}
+
 
 
 .titolo-sito {
@@ -76,3 +80,6 @@ margin: auto;
   
 }
 
+.sbarrato {
+  text-decoration: line-through;
+}
