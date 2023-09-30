@@ -53,7 +53,7 @@
       <ul v-if="tasks.length > 0">
         <li @click="task.done = !task.done" v-for="(task, index) in tasks">
           <span class="fs-5" :class="{'sbarrato text-danger': task.done}">{{task.testo}}</span>
-          <i @click.stop="task.done ? removeTask(index) : task.showDeleteError = true" class="fa-solid fa-trash-can"></i>
+          <i @click.stop="removeTask(index)" class="fa-solid fa-trash-can"></i>
           <span v-if="task.showDeleteError" class="ms-5 text-danger">Il task non è stato ancora fatto</span>
           
 
