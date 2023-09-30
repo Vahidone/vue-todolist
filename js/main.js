@@ -38,6 +38,9 @@ const { createApp } = Vue;
       addTask() {
         if (this.newTask.testo.length < 5) { 
           this.isError = true;
+          setTimeout(() => {
+            this.isError = false;
+          }, 2000);
         } else {
           this.tasks.unshift({ ...this.newTask }); // ho aggiunto un nuovo oggetto al posto della stringa
           this.newTask.testo = ''; // cancella solo il testo
@@ -49,9 +52,11 @@ const { createApp } = Vue;
         const task = this.tasks[index];
         if (!task.done) {
           task.showDeleteError = true;
+
           setTimeout(() => {
             task.showDeleteError = false;
           }, 2000);
+
         } else {
           this.tasks.splice(index, 1);
         }
