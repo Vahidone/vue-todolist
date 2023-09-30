@@ -20,9 +20,16 @@
 #### pseudocodice: 
 1. Usare il valore booleano "done" nel @click sull'elemento "li": true è uguale al false.
 
-### Bonus 3: 
+### Bonus 3: eliminare il todo solo se è stato svolto, altrimenti esporre un messaggio di errore
 
-#### pseudocodice: eliminare il todo solo se è stato svolto, altrimenti esporre un messaggio di errore
+#### pseudocodice: 
+1. Usare l'espressione ternaria nel @click dell'elemento "i": il click elimina task solo se task.done è true.
+2. Impostare @click.stop nell'elemento "i". 
+3. Creare un span con dentro il messaggio di errore.
+4. Aggiungere una proprietà booleanian (di default false) a ciascun oggetto task nell'array tasks.
+5. Mettere questa proprietà all'interno della funzione removeTask().
+6. Aggiungiamo una condizione nella removeTask per la quale se task.done è true la proprietà booleaniana diventa true.
+7. Aggiungere questa proprietà booleanina nello span di messaggio di errore in html.
 
 
 
