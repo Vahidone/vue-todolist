@@ -44,17 +44,21 @@
       <input type="text" v-model.trim="newTask.testo" placeholder="Inserisci nuova task" @keyup.enter="addTask">
 
       <button class="bottone" @click="addTask">Aggiungi</button>
-      <p v-if="isError" class="fs-5 text-danger  mt-3 ">
-        Il nuovo task deve avere almeno 5 caratteri
-      </p>
+      <div class="box-message">
+        <p v-if="isError" class="fs-5 d-inline text-danger bg-warning mt-3 ">
+          Il nuovo task deve avere almeno 5 caratteri !!!
+        </p>
+
+      </div>
+     
     </div>
 
     <div class="task-container">
       <ul v-if="tasks.length > 0">
         <li @click="task.done = !task.done" v-for="(task, index) in tasks">
-          <span class="fs-5" :class="{'sbarrato text-danger': task.done}">{{task.testo}}</span>
+          <span class="fs-5" :class="{sbarrato: task.done}">{{task.testo}}</span>
           <i @click.stop="removeTask(index)" class="fa-solid fa-trash-can"></i>
-          <span v-if="task.showDeleteError" class="ms-5 text-danger">Il task non è stato ancora fatto</span>
+          <span v-if="task.showDeleteError" class="ms-5 bg-warning  text-danger">Il task non è stato ancora fatto !!!</span>
           
 
         </li>
