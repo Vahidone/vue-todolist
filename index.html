@@ -45,7 +45,7 @@
 
       <button class="bottone" @click="addTask">Aggiungi</button>
       <div class="box-message">
-        <p v-if="isError" class="fs-5 d-inline text-danger bg-warning mt-3 ">
+        <p v-if="isError" class="d-inline b-radius text-animation p-3 mt-3">
           Il nuovo task deve avere almeno 5 caratteri !!!
         </p>
 
@@ -58,7 +58,7 @@
         <li @click="task.done = !task.done" v-for="(task, index) in tasks">
           <span class="fs-5" :class="{sbarrato: task.done}">{{task.testo}}</span>
           <i @click.stop="removeTask(index)" class="fa-solid fa-trash-can"></i>
-          <span v-if="task.showDeleteError" class="ms-5 bg-warning  text-danger">Il task non è stato ancora fatto !!!</span>
+          <span v-if="task.showDeleteError" class="ms-5 p-2 b-radius text-animation">Il task non è stato ancora fatto !!!</span>
           
 
         </li>

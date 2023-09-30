@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+
+.b-radius {
+  border-radius: 5px;
 }
 
 
@@ -106,4 +111,28 @@ margin: auto;
   margin: 0 auto;
   overflow: hidden;
   margin-top: 30px;
+  
+}
+
+
+.text-animation {
+  transition: color 0.4s; 
+  animation: colorToggle 0.2s alternate infinite;
+  font-size: 22px;
+}
+
+@keyframes colorToggle {
+  0% {
+    color: red;
+    background-color: yellow;
+    
+    
+    
+
+  }
+  100% {
+    color: yellow;
+    background-color: rgb(147, 25, 25);
+    
+  }
 }
