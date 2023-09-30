@@ -7,10 +7,8 @@
 }
 
 .b-radius {
-  border-radius: 5px;
+  border-radius: 10px;
 }
-
-
 
 
 .container {
@@ -46,8 +44,8 @@ margin: auto;
 }
 
 .task-container {
-  background-color: white;
-  border-radius: 10px;
+  background-color: lightsteelblue;
+  border-radius: 30px;
   margin-top: 40px;
   padding: 30px;
 }
@@ -58,7 +56,7 @@ margin: auto;
 
 .task-container li {
   line-height: 40px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 3px solid white;
   padding: 0 15px;
 }
 
@@ -116,22 +114,22 @@ margin: auto;
 
 
 .text-animation {
-  transition: color 0.4s; 
-  animation: colorToggle 0.2s alternate infinite;
-  font-size: 21px;
+  transition: color 0.3s; 
+  animation: colorToggle 0.3s alternate infinite;
+  font-size: 19px;
   
 }
 
 @keyframes colorToggle {
   0% {
     color: red;
-    background-color: yellow;
+    background-color: rgb(196, 196, 47);
     
 
   }
   100% {
     color: yellow;
-    background-color: rgb(147, 25, 25);
-    font-size: 22px;
+    background-color: rgb(63, 63, 167);
+    font-size: 20px;
   }
 }
