@@ -43,7 +43,7 @@
     <div class="new-task">
       <input type="text" v-model.trim="newTask.testo" placeholder="Inserisci nuova task" @keyup.enter="addTask">
 
-      <button class="bottone" @click="addTask">Aggiungi</button>
+      <button class="bottone" @click="addTask">Add +</button>
       <div class="box-message">
         <p v-if="isError" class="d-inline b-radius text-animation p-3 mt-3">
           Il nuovo task deve avere almeno 5 caratteri !!!
