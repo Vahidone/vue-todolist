@@ -29,6 +29,7 @@ const { createApp } = Vue;
         },
 
         isError: false,
+      
         
       }
     },
@@ -46,14 +47,19 @@ const { createApp } = Vue;
 
       removeTask(index) {
         const task = this.tasks[index];
-      if (!task.done) {
-        task.showDeleteError = true; 
-      } else {
-        this.tasks.splice(index, 1);
-      }
-        
+        if (!task.done) {
+          task.showDeleteError = true;
+          setTimeout(() => {
+            task.showDeleteError = false;
+          }, 2000);
+        } else {
+          this.tasks.splice(index, 1);
+        }
       },
 
-    }
+    
+
+    },
+
+   
   }).mount('#app');
-  console.log();
