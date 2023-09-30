@@ -1,5 +1,4 @@
 
-
 const { createApp } = Vue;
 
   createApp({
@@ -8,22 +7,35 @@ const { createApp } = Vue;
         tasks: [
           {
             testo: 'Fare la spesa',
-            done: false
+            done: false,
+            showDeleteError: false
+          },
+          {
+            testo: 'Giocare a pallone',
+            done: false,
+            showDeleteError: false
+          },
+          {
+            testo: 'Studiare Vue.js',
+            done: false,
+            showDeleteError: false
           }
         ],
 
         newTask: {
           testo: '', // ho aggiunto oggetto newTask come un oggetto
-          done: false
+          done: false,
+          showDeleteError: false
         },
 
         isError: false,
+        
       }
     },
 
     methods: {
       addTask() {
-        if (this.newTask.testo.length < 5) { // ho usato this.newTask.testo
+        if (this.newTask.testo.length < 5) { 
           this.isError = true;
         } else {
           this.tasks.unshift({ ...this.newTask }); // ho aggiunto un nuovo oggetto al posto della stringa
@@ -33,7 +45,15 @@ const { createApp } = Vue;
       },
 
       removeTask(index) {
-        this.tasks.splice(index, 1)
+        const task = this.tasks[index];
+      if (!task.done) {
+        task.showDeleteError = true; 
+      } else {
+        this.tasks.splice(index, 1);
       }
+        
+      },
+
     }
   }).mount('#app');
+  console.log();
