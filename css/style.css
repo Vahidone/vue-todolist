@@ -90,6 +90,10 @@ margin: auto;
   text-align: center;
   font-weight: bold;
 }
+.task-container h1 {
+  color: rgb(1, 58, 1);
+  font-size: 2.4rem;
+}
 
 .titolo-sito {
   font-size: 3.5rem;
