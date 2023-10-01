@@ -62,7 +62,6 @@
           
 
         </li>
-        
 
       </ul>
 
@@ -79,8 +78,14 @@
 
       
     </div>
-    
 
+    <div class="done-task-box">
+      <h3 class="text-center mb-2 fs-3 fw-bold">Lista dei task compiuti</h3>
+      <ul>
+        <li v-for="task in doneTaskArray">{{task.testo}}</li>
+      </ul>
+    </div>
+    
 
     
   </div>
