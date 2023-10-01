@@ -1,4 +1,5 @@
 
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@
 }
 
 body {
-  background-color: rgb(171, 170, 170);
+  background-color: rgb(241, 239, 239);
 }
 
 .container {
@@ -57,7 +58,8 @@ margin: auto;
   list-style: none;
 }
 
-.task-container li {
+.task-container li,
+.done-task-box li {
   line-height: 40px;
   border-bottom: 3px solid white;
   padding: 0 15px;
@@ -72,6 +74,7 @@ margin: auto;
   float: right;
   line-height: 40px;
   cursor: pointer;
+  font-size: 25px;
 
 }
 .task-container li i:hover {
@@ -116,6 +119,7 @@ margin: auto;
 }
 
 
+
 .text-animation {
   transition: color 0.3s; 
   animation: colorToggle 0.3s alternate infinite;
@@ -135,4 +139,13 @@ margin: auto;
     background-color: rgb(63, 63, 167);
     font-size: 20px;
   }
+}
+
+
+
+.done-task-box {
+ background-color: lightpink;
+ margin-top: 150px;
+ border-radius: 30px;
+ padding: 30px;
 }
