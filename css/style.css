@@ -85,7 +85,11 @@ margin: auto;
   color: red;
 }
 
-
+.task-container h3 {
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
+}
 
 .titolo-sito {
   font-size: 3.5rem;
