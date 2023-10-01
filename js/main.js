@@ -29,6 +29,7 @@ const { createApp } = Vue;
         },
 
         isError: false,
+        doneTaskArray: []
       
         
       }
@@ -36,18 +37,13 @@ const { createApp } = Vue;
 
     methods: {
 
-      // stopErrorSound() {
-      //   const errorSound = document.getElementById('errorSound');
-      //   errorSound.pause();
-      //   errorSound.currentTime = 0; // Ripristina la posizione di riproduzione all'inizio
-      // },
-
       addTask() {
         if (this.newTask.testo.length < 5) { 
           this.isError = true;
+          
           setTimeout(() => {
             this.isError = false;
-          }, 5000);
+          }, 4000);
 
           const Sound = document.getElementById('errorSound');
           Sound.play();
@@ -72,15 +68,20 @@ const { createApp } = Vue;
           
           setTimeout(() => {
             task.showDeleteError = false;
-          }, 5000);
+          }, 4000);
         } else {
-          this.tasks.splice(index, 1);
+          const taskEliminati = this.tasks.splice(index, 1)[0];
+          this.doneTaskArray.push(taskEliminati);
+
+
           const Sound = document.getElementById('trashSound');
           Sound.play();
         }
       },
 
     },
+
+
 
    
   }).mount('#app');
