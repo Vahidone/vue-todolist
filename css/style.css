@@ -60,9 +60,13 @@ margin: auto;
 
 .task-container li,
 .done-task-box li {
+  font-size: 24px;
   line-height: 40px;
   border-bottom: 3px solid white;
   padding: 0 15px;
+}
+.task-container li span {
+  font-size: 24px;
 }
 
 .task-container li:hover {
@@ -144,8 +148,13 @@ margin: auto;
 
 
 .done-task-box {
- background-color: lightpink;
+  color: rgb(140, 2, 2);
+ background-color: rgb(252, 195, 204);
  margin-top: 150px;
  border-radius: 30px;
  padding: 30px;
+}
+.done-task-box h3 {
+  background-color: white;
+  border-radius: 30px;
 }
